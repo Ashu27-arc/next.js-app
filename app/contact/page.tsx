@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 
+import Footer from '@/components/Footer';
+
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<{
@@ -53,7 +55,8 @@ export default function Contact() {
   };
 
   return (
-    <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <>
+      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <div className="max-w-2xl mx-auto">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text mb-4">
@@ -130,5 +133,7 @@ export default function Contact() {
         </div>
       </div>
     </main>
+      <Footer />
+    </>
   );
 }

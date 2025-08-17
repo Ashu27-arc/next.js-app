@@ -1,7 +1,10 @@
+import Footer from '@/components/Footer';
+
 export default function About() {
   return (
-    <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <div className="space-y-16">
+    <>
+      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="space-y-16">
         <div className="text-center max-w-3xl mx-auto">
           <h1 className="text-4xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text">About Us</h1>
           <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
@@ -49,5 +52,7 @@ export default function About() {
         </div>
       </div>
     </main>
+      <Footer />
+    </>
   );
 }

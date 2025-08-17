@@ -1,3 +1,5 @@
+import Footer from '@/components/Footer';
+
 export default function Projects() {
   const projects = [
     {
@@ -21,7 +23,8 @@ export default function Projects() {
   ];
 
   return (
-    <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <>
+      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <div className="text-center max-w-3xl mx-auto mb-16">
         <h1 className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text mb-6">
           Our Projects
@@ -62,5 +65,7 @@ export default function Projects() {
         ))}
       </div>
     </main>
+      <Footer />
+    </>
   );
 }
