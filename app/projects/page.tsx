@@ -1,4 +1,5 @@
 import Footer from '@/components/Footer';
+import Image from 'next/image';
 
 export default function Projects() {
   const projects = [
@@ -24,47 +25,70 @@ export default function Projects() {
 
   return (
     <>
-      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <div className="text-center max-w-3xl mx-auto mb-16">
-        <h1 className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text mb-6">
-          Our Projects
-        </h1>
-        <p className="text-lg text-gray-600 dark:text-gray-300">
-          Explore our latest work and innovations in web development and technology
-        </p>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {projects.map((project, index) => (
-          <div
-            key={index}
-            className="group relative bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
-          >
-            <div className={`absolute inset-0 bg-gradient-to-r ${project.gradient} rounded-2xl opacity-0 group-hover:opacity-5 transition-opacity duration-300`} />
-            
-            <div className="relative">
-              <h2 className="text-2xl font-semibold mb-3 bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text">
-                {project.title}
-              </h2>
-              <p className="text-gray-600 dark:text-gray-300 mb-6 line-clamp-2">
-                {project.description}
-              </p>
-              
-              <div className="flex flex-wrap gap-2">
-                {project.tech.map((tech, techIndex) => (
-                  <span
-                    key={techIndex}
-                    className="px-3 py-1 rounded-full text-sm bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:scale-105 transition-transform duration-200"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </div>
+      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative h-96 w-full mb-12 rounded-2xl overflow-hidden">
+          <Image
+            src="/images/project-banner.jpg"
+            alt="Projects showcase"
+            fill
+            className="object-cover"
+            priority
+            sizes="(max-width: 1200px) 100vw, 1200px"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">Our Projects</h1>
           </div>
-        ))}
-      </div>
-    </main>
+        </div>
+        
+        <div className="pb-16">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300">
+              Explore our latest work and innovations in web development and technology
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            {projects.map((project, index) => (
+              <div
+                key={index}
+                className="group relative bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 h-full flex flex-col"
+              >
+                <div className={`absolute inset-0 bg-gradient-to-r ${project.gradient} rounded-2xl opacity-0 group-hover:opacity-5 transition-opacity duration-300`} />
+                
+                <div className="relative flex-grow">
+                  <div className="h-48 w-full mb-6 rounded-xl overflow-hidden">
+                    <Image
+                      src={`/images/project-${index + 1}.png`}
+                      alt={project.title}
+                      width={600}
+                      height={400}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                  
+                  <h2 className="text-2xl font-semibold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text">
+                    {project.title}
+                  </h2>
+                  <p className="text-gray-600 dark:text-gray-300 mb-6 line-clamp-3 text-base">
+                    {project.description}
+                  </p>
+                </div>
+                
+                <div className="flex flex-wrap gap-2 mt-auto">
+                  {project.tech.map((tech, techIndex) => (
+                    <span
+                      key={techIndex}
+                      className="px-3 py-1.5 rounded-full text-sm bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:scale-105 transition-all duration-200"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </main>
       <Footer />
     </>
   );

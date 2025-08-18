@@ -1,12 +1,24 @@
 import Footer from '@/components/Footer';
+import Image from 'next/image';
 
 export default function About() {
   return (
     <>
-      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="space-y-16">
+      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative h-80 w-full mb-12 rounded-2xl overflow-hidden">
+          <Image
+            src="/images/about-banner.jpg"
+            alt="Team working together"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8">
+            <h1 className="text-4xl md:text-5xl font-bold text-white">About Us</h1>
+          </div>
+        </div>
+        <div className="space-y-16 pb-16">
         <div className="text-center max-w-3xl mx-auto">
-          <h1 className="text-4xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text">About Us</h1>
           <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
             Welcome to our website! We are a dedicated team passionate about creating
             amazing digital experiences.
@@ -51,7 +63,7 @@ export default function About() {
           </div>
         </div>
       </div>
-    </main>
+      </main>
       <Footer />
     </>
   );
