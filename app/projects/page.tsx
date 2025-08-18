@@ -58,7 +58,7 @@ export default function Projects() {
                 <div className="relative flex-grow">
                   <div className="h-48 w-full mb-6 rounded-xl overflow-hidden">
                     <Image
-                      src={`/images/project-${index + 1}.png`}
+                      src={`/images/projects/project-${index + 1}.png`}
                       alt={project.title}
                       width={600}
                       height={400}
