@@ -57,15 +57,15 @@ export default function Contact() {
   return (
     <>
       <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative h-80 w-full mb-12 rounded-2xl overflow-hidden">
+        <div className="relative h-80 w-full mb-12 rounded-3xl overflow-hidden border border-gray-200/60 dark:border-white/10 shadow-xl">
           <Image
             src="/images/contact-banner.jpg"
             alt="Contact us"
             fill
-            className="object-cover"
+            className="object-cover scale-[1.02]"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8">
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent flex items-end p-8">
             <h1 className="text-4xl md:text-5xl font-bold text-white">Get in Touch</h1>
           </div>
         </div>
@@ -77,7 +77,7 @@ export default function Contact() {
             </p>
           </div>
 
-          <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300">
+          <div className="bg-white/80 dark:bg-gray-800/70 backdrop-blur rounded-2xl p-8 border border-gray-200/60 dark:border-white/10 shadow-xl hover:shadow-2xl transition-all duration-300 hover:ring-1 hover:ring-blue-500/20">
             {submitStatus.type && (
               <div className={`mb-6 p-4 rounded-lg ${
                 submitStatus.type === 'success' 
@@ -96,7 +96,7 @@ export default function Contact() {
                   type="text"
                   id="name"
                   name="name"
-                  className="block w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                  className="block w-full px-4 py-3 rounded-lg bg-white/70 dark:bg-white/5 border border-gray-200/60 dark:border-white/10 text-gray-900 dark:text-white placeholder:text-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 backdrop-blur"
                   required
                   placeholder="Your name"
                 />
@@ -110,7 +110,7 @@ export default function Contact() {
                   type="email"
                   id="email"
                   name="email"
-                  className="block w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                  className="block w-full px-4 py-3 rounded-lg bg-white/70 dark:bg-white/5 border border-gray-200/60 dark:border-white/10 text-gray-900 dark:text-white placeholder:text-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 backdrop-blur"
                   required
                   placeholder="your@email.com"
                 />
@@ -124,7 +124,7 @@ export default function Contact() {
                   id="message"
                   name="message"
                   rows={4}
-                  className="block w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                  className="block w-full px-4 py-3 rounded-lg bg-white/70 dark:bg-white/5 border border-gray-200/60 dark:border-white/10 text-gray-900 dark:text-white placeholder:text-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 backdrop-blur"
                   required
                   placeholder="Your message..."
                 ></textarea>
@@ -133,7 +133,7 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className={`w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-lg font-medium hover:from-blue-700 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transform hover:scale-[1.02] transition-all duration-200 ${
+                className={`w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-lg font-medium shadow-lg shadow-blue-600/20 hover:shadow-xl hover:shadow-purple-600/25 ring-1 ring-white/20 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transform hover:-translate-y-0.5 transition-all duration-200 ${
                   isSubmitting ? 'opacity-50 cursor-not-allowed' : ''
                 }`}
               >

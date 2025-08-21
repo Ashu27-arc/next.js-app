@@ -5,15 +5,15 @@ export default function About() {
   return (
     <>
       <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative h-80 w-full mb-12 rounded-2xl overflow-hidden">
+        <div className="relative h-80 w-full mb-12 rounded-3xl overflow-hidden border border-gray-200/60 dark:border-white/10 shadow-xl">
           <Image
             src="/images/about-banner.jpg"
             alt="Team working together"
             fill
-            className="object-cover"
+            className="object-cover scale-[1.02]"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8">
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent flex items-end p-8">
             <h1 className="text-4xl md:text-5xl font-bold text-white">About Us</h1>
           </div>
         </div>
@@ -25,7 +25,7 @@ export default function About() {
           </p>
         </div>
 
-        <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-shadow duration-300">
+        <div className="bg-white/80 dark:bg-gray-800/70 backdrop-blur rounded-2xl p-8 border border-gray-200/60 dark:border-white/10 shadow-xl hover:shadow-2xl transition-shadow duration-300 hover:ring-1 hover:ring-blue-500/20">
           <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
             Our mission is to deliver high-quality solutions that help businesses and
             individuals achieve their goals through innovative technology.
@@ -33,7 +33,7 @@ export default function About() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
-          <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl">
+          <div className="bg-white/80 dark:bg-gray-800/70 backdrop-blur rounded-2xl p-8 border border-gray-200/60 dark:border-white/10 shadow-xl">
             <h2 className="text-2xl font-semibold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text">Our Values</h2>
             <ul className="space-y-4">
               <li className="flex items-center space-x-3">
@@ -54,7 +54,7 @@ export default function About() {
               </li>
             </ul>
           </div>
-          <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl">
+          <div className="bg-white/80 dark:bg-gray-800/70 backdrop-blur rounded-2xl p-8 border border-gray-200/60 dark:border-white/10 shadow-xl">
             <h2 className="text-2xl font-semibold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text">Our Approach</h2>
             <div className="space-y-4 text-gray-600 dark:text-gray-300">
               <p>We believe in creating meaningful solutions that make a real difference. Our approach combines creativity with technical excellence to deliver outstanding results.</p>

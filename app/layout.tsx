@@ -27,7 +27,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 min-h-screen`}
       >
-        <nav className="backdrop-blur-md bg-white/80 dark:bg-gray-900/80 sticky top-0 z-50 border-b border-gray-200 dark:border-gray-700">
+        <nav className="sticky top-0 z-50 backdrop-blur-xl bg-white/70 dark:bg-gray-900/60 supports-[backdrop-filter]:bg-white/50 border-b border-white/20 dark:border-white/10">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-16">
               <div className="flex items-center">
@@ -36,17 +36,20 @@ export default function RootLayout({
                 </a>
               </div>
               <div className="hidden md:block">
-                <div className="ml-10 flex items-baseline space-x-8">
-                  <a href="/" className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-200 dark:hover:text-blue-400 transition-colors">
+                <div className="ml-10 flex items-baseline space-x-2">
+                  <a href="/" className="px-3 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-200 dark:hover:text-white transition-colors hover:bg-gray-100/70 dark:hover:bg-white/5">
                     Home
                   </a>
-                  <a href="/about" className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-200 dark:hover:text-blue-400 transition-colors">
+                  <a href="/about" className="px-3 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-200 dark:hover:text-white transition-colors hover:bg-gray-100/70 dark:hover:bg-white/5">
                     About
                   </a>
-                  <a href="/projects" className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-200 dark:hover:text-blue-400 transition-colors">
+                  <a href="/services" className="px-3 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-200 dark:hover:text-white transition-colors hover:bg-gray-100/70 dark:hover:bg-white/5">
+                    Services
+                  </a>
+                  <a href="/projects" className="px-3 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-200 dark:hover:text-white transition-colors hover:bg-gray-100/70 dark:hover:bg-white/5">
                     Projects
                   </a>
-                  <a href="/contact" className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-200 dark:hover:text-blue-400 transition-colors">
+                  <a href="/contact" className="px-3 py-2 rounded-full text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-200 dark:hover:text-white transition-colors hover:bg-gray-100/70 dark:hover:bg-white/5">
                     Contact
                   </a>
                 </div>

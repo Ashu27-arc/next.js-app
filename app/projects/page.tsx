@@ -26,16 +26,16 @@ export default function Projects() {
   return (
     <>
       <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative h-96 w-full mb-12 rounded-2xl overflow-hidden">
+        <div className="relative h-96 w-full mb-12 rounded-3xl overflow-hidden border border-gray-200/60 dark:border-white/10 shadow-xl">
           <Image
             src="/images/project-banner.jpg"
             alt="Projects showcase"
             fill
-            className="object-cover"
+            className="object-cover scale-[1.02]"
             priority
             sizes="(max-width: 1200px) 100vw, 1200px"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8">
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent flex items-end p-8">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">Our Projects</h1>
           </div>
         </div>
@@ -51,12 +51,12 @@ export default function Projects() {
             {projects.map((project, index) => (
               <div
                 key={index}
-                className="group relative bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 h-full flex flex-col"
+                className="group relative bg-white/80 dark:bg-gray-800/70 backdrop-blur rounded-2xl p-8 border border-gray-200/60 dark:border-white/10 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:ring-1 hover:ring-blue-500/20 h-full flex flex-col"
               >
-                <div className={`absolute inset-0 bg-gradient-to-r ${project.gradient} rounded-2xl opacity-0 group-hover:opacity-5 transition-opacity duration-300`} />
+                <div className={`pointer-events-none absolute inset-0 bg-gradient-to-r ${project.gradient} rounded-2xl opacity-0 group-hover:opacity-10 transition-opacity duration-300`} />
                 
                 <div className="relative flex-grow">
-                  <div className="h-48 w-full mb-6 rounded-xl overflow-hidden">
+                  <div className="h-48 w-full mb-6 rounded-xl overflow-hidden border border-gray-200/60 dark:border-white/10">
                     <Image
                       src={`/images/projects/project-${index + 1}.png`}
                       alt={project.title}
@@ -78,7 +78,7 @@ export default function Projects() {
                   {project.tech.map((tech, techIndex) => (
                     <span
                       key={techIndex}
-                      className="px-3 py-1.5 rounded-full text-sm bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:scale-105 transition-all duration-200"
+                      className="px-3 py-1.5 rounded-full text-sm bg-gray-100/80 dark:bg-white/10 text-gray-700 dark:text-gray-300 backdrop-blur hover:scale-105 transition-all duration-200"
                     >
                       {tech}
                     </span>
