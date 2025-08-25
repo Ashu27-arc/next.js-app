@@ -14,6 +14,12 @@ export async function sendEmail({ name, email, message }: {
   email: string;
   message: string;
 }) {
+  // Check if email configuration is available
+  if (!process.env.EMAIL_USER || !process.env.EMAIL_PASSWORD || !process.env.ADMIN_EMAIL) {
+    console.warn('Email configuration missing, skipping email send');
+    throw new Error('Email configuration not set up');
+  }
+
   try {
     await transporter.sendMail({
       from: process.env.EMAIL_USER,
